@@ -18,7 +18,17 @@ $(function(){
         outputSentence.push(inputArray.join(''));
 
       }else{
-        vowels.indexOf(inputArray)
+        for(var i = 0; i <= inputArray.length-1; i++){
+          if (vowels.includes(inputArray[i]) === true) {
+
+            var secondSlicedPartOfWord = (inputArray.slice(i));
+            var firstSlicedPartOfWord = (inputArray.slice(0,i));
+            outputSentence.push(secondSlicedPartOfWord.join(''));
+            outputSentence.push(firstSlicedPartOfWord.join('') + "ay");
+            break
+
+          }
+        }
       }
     }
 
